@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CreateTask from '../others/CreateTask'
 import AllTask from '../others/AllTask'
 import Header from '../others/Header'
+import { AuthContext } from '../../context/AuthProvider'
 
-const Admin = ({data}) => {
-  console.log(data);
+const Admin = () => {
+  const data1 = useContext(AuthContext);
   return (
     <div className='h-screen w-full p-7'>
-      <Header data={data}/>
+      <Header/>
       <CreateTask />
-      <AllTask />
+      <AllTask data={data1} />
 
 
     </div>
