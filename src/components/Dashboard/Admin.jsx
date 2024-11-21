@@ -4,11 +4,12 @@ import AllTask from '../others/AllTask'
 import Header from '../others/Header'
 import { AuthContext } from '../../context/AuthProvider'
 
-const Admin = () => {
+const Admin = (props) => {
+
   const data1 = useContext(AuthContext);
   return (
     <div className='h-screen w-full p-7'>
-      <Header/>
+      <Header changeUser={props.changeUser} />
       <CreateTask />
       <AllTask data={data1} />
 
